@@ -1,0 +1,19 @@
+#Matrices con numpy (son 'numpy.ndarray' bidimensionales)
+
+import numpy as np
+def iniMatrix (lista): 
+	matriz_local =  np.zeros((len(lista)+1, len(lista)+1), dtype = float) 
+	i=1
+	for id in lista: #bucle para las cabeceras (primera fila y primera columna) de la matriz
+		matriz_local[0][i] = int(id)*i
+		matriz_local[i][0] = int(id)*i+1
+		i = i+1
+	return matriz_local
+
+
+m= iniMatrix([1,2,3,4,5,6,7,8,9,10])
+print(m)
+print("fila1=",m[0])
+print("fila2=",m[1])
+print("columna 1=", m[:, 1])
+print("columna 2=", m[:, 2])
